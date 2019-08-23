@@ -1,0 +1,31 @@
+<fieldset>
+    <h3>Edit {{ animal.name }}'s Information</h3>
+    <form (submit)="updateAnimal()">
+        <p>
+            <em>Name: </em> <br>
+            <span style="color: red;" *ngIf="errors.name">{{ errors.name.message }} <br></span>
+            <input type="text"[(ngModel)]="animal.name" name="animal.name" />
+            
+        </p>
+        <p>
+            <em>Species: </em> <br>
+            <span style="color: red;" *ngIf="errors.species">{{ errors.species.message }}<br></span> 
+            <input type="text"[(ngModel)]="animal.species" name="animal.species" />
+        </p>
+        <p>
+            <em>Description: </em> <br>
+            <span style="color: red;" *ngIf="errors.description">{{ errors.description.message }}<br></span> 
+            <input type="text"[(ngModel)]="animal.description" name="animal.description" />
+        </p>
+        <p>
+            <em>Skills:</em>
+        </p>
+        <ul>
+            <li><input type="text" [(ngModel)]="animal.skills1" name="animal.skills1" placeholder="Dances"/><span *ngIf="errors.skills1">{{ errors.skills1.message }}</span></li>
+            <li><input type="text" [(ngModel)]="animal.skills2" name="animal.skills2" placeholder="Talks"/><span *ngIf="errors.skills2">{{ errors.skills2.message }}</span></li>
+            <li><input type="text" [(ngModel)]="animal.skills3" name="animal.skills3" placeholder="Does a flip"/><span *ngIf="errors.skills3">{{ errors.skills3.message }}</span></li>
+        </ul>
+        <button type="submit" class="btn btn-success btn-lg">Update!</button>
+    </form>
+
+</fieldset>

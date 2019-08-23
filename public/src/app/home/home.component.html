@@ -1,0 +1,19 @@
+<fieldset>
+    <h3>Check out all these pets for adoption!</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let animal of animals">
+            <td>{{ animal.name }}</td>
+            <td>{{ animal.species }}</td>
+            <td>
+                <button class="btn btn-secondary btn-sm" [routerLink]="['/detail/', animal._id]">Details</button>
+                <button class="btn btn-secondary btn-sm" [routerLink]="['/edit/', animal._id]">Edit</button>
+            </td>
+        </tr>
+    </table>
+    
+</fieldset>

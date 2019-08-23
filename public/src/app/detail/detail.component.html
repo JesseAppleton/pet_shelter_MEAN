@@ -1,0 +1,20 @@
+<fieldset>
+    <h3>{{ animal.name }} the {{ animal.species }}'s page</h3>
+    <label><em>Info:</em></label>
+    <ul>
+        <li><em>Name: </em> {{ animal.name }}</li>
+        <li><em>Species: </em> {{ animal.species }}</li>
+        <li><em>Description: </em> {{ animal.description }}</li>
+        <li><em>Skills: </em>
+            <ul>
+                <li>{{ animal.skills1 }}</li>
+                <li>{{ animal.skills2 }}</li>
+                <li>{{ animal.skills3 }}</li>
+            </ul>
+        </li>
+    </ul>
+    <button type="submit" class="btn btn-primary btn-sm" [routerLink]="['/edit/', animal._id]">Edit</button>
+    <button type="button" class="btn btn-primary btn-sm" (click)="removeAnimal()">Adopt!</button>
+    <button type="button" class="btn btn-primary btn-sm" [disabled]="animal.isDisabled" (click)="like()">Like this pet!</button>
+    
+</fieldset>
